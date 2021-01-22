@@ -20,13 +20,46 @@
                 <div class="loginContainer">
                     <span id="headingText">Login and enjoy <span id="highlighted">unlimited</span> video calling</span>
                     <br/>
+                    <form action="./index.html" onsubmit="return validate()">
                     <input type="text" id="email" placeholder="Email"/>
                     <br/>
                     <input type="password" id="password" placeholder="Password"/>
                     <br/>
-                    <button class="submitButton">Login</button>
+                    <button class="submitButton" onclick="validate()">Login</button>
+                    </form>
                 </div>
             </div>
         </div>
+        <script>
+            function validate(){
+                let email_input = document.querySelector("#email");
+                let password_input = document.querySelector("#password");
+                let bol = false;
+                if (email_input.value.match(/\S+@\S+/)){
+                    console.log("checked email");
+                    email_input.className = "";
+                    bol = true;
+                }else{
+                    console.log("checked email error");
+                    email_input.className = "incorrect";
+                    bol = false;
+
+                }
+
+                if (password_input.value.length >= 8){
+                    console.log("checked password");
+                    password_input.className = "";
+                    bol = true;
+
+                }else{
+                    console.log("checked password error");
+                    password_input.className = "incorrect";
+                    bol = false;
+                }
+
+                return bol;
+            }
+        
+        </script>
     </body>
 </html>
