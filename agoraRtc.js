@@ -17,7 +17,12 @@ document.getElementById("join").onclick = function () {
     let channelName = document.getElementById("channelName").value;
     let Username = document.getElementById("username").value;
     let appId = "327c16b15a1d4e939071263df97799fb";
-
+    let leftSplit = document.querySelector(".left")
+    let participant_name = document.createElement("p")
+    
+    participant_name.innerHTML = Username;
+    leftSplit.appendChild(participant_name);
+    
     let client = AgoraRTC.createClient({
         mode: "live",
         codec: "h264"
