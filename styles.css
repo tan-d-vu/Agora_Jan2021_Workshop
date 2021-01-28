@@ -1,12 +1,9 @@
-
-
-
 #SelfStream{
-    margin-top: 150px;
-    justify-self: center;
+    margin-top: 55px;
+    margin-left: 15rem;
     border: 2px solid #099dfd;
-    width: 800px;
-    height: 500px;
+    width: 60%;
+    height: 50%;
 }
 
 #remoteStream{

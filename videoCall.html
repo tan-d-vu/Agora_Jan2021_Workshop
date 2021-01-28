@@ -4,28 +4,64 @@
         <link rel="stylesheet" href="styles.css"/>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <style>
+            .left {
+            left: 0;
+            background-color:white;
+            }
+
+            .right {
+            right: 0;
+            background-color: #099dfd white;
+            }
+
+            .split-left {
+            height: 100%;
+            width: 20%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding: 20px;
+            border-right: 2px solid gray;
+            }
+            .split-right {
+            height: 100%;
+            width: 75%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding: 20px;
+
+            }
+        </style>
     </head>
     <body>
-        <div class="flexContainer">
-            <div class="left-pane">
-                <div class="logoSmall">
-                    <img class="logoElement" src="assets/agoraLogo.png"/>
-                </div>
-                <span class="headingText">
-                    Join A Chat!
-                </span>
-                <input type="text" id="username" placeholder="Username" value="JohnDoe123">
-                <input type="text" id="channelName" placeholder="ChannelName" value="Agora">
-                <button class="submitButton" id="join">Join</button>
+        <div class="left split-left">
+            <div class="logoSmall">
+                <img class="logoElement" src="assets/agoraLogo.png"/>
             </div>
-            <div class="right-container">
+            <span class="headingText">
+                Join A Chat!
+            </span>
+            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="channelName" placeholder="ChannelName">
+            <button class="submitButton" id="join">Join</button>
+
+            <h2> Participants </h2>
+            <p>sadfdfsa</p>
+
+        </div>
+
+        <div class="right split-right">
             <div class="right-pane">
                 <div id="SelfStream">
                 </div>
+                
                 <div id="remoteStream">
                 </div>
             </div>
-        </div>
         </div>
         <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
         <script src="agoraRtc.js"></script>

@@ -8,9 +8,9 @@ function addVideoStream(streamId){
     let remoteContainer = document.getElementById("remoteStream");
     let streamDiv = document.createElement("div");
     streamDiv.id = streamId;
-    // streamDiv.style.transform = "rotateY(180deg)";
-    streamDiv.style.height = "250px"
-    remoteContainer.appendChild(streamDiv)
+    streamDiv.style.transform = "rotateY(180deg)";
+    streamDiv.style.height = "250px";
+    remoteContainer.appendChild(streamDiv);
 } 
 
 document.getElementById("join").onclick = function () {
@@ -24,7 +24,7 @@ document.getElementById("join").onclick = function () {
     })
 
     client.init(appId,() => console.log("AgoraRTC Client Connected"),handlefail
-    )
+    );
 
     client.join(
         null,
@@ -35,7 +35,6 @@ document.getElementById("join").onclick = function () {
                 video: true,
                 audio: true,
             })
-
             localStream.init(function(){
                 localStream.play("SelfStream")
                 console.log(`App id: ${appId}\nChannel id: ${channelName}`)
